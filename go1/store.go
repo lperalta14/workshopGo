@@ -66,7 +66,7 @@ func (s *Store) Reserve(productID string, qty int) (*Reservation, error) {
     	Quantity:  qty,
     	Status:    Held,
 	}
-	s.reservations[productID] = res
+	s.reservations[resID] = res
 	return res, nil
 }
 
