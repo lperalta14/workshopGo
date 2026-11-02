@@ -3,6 +3,7 @@ package reservations
 import (
 	"errors"
 	"fmt"
+	"sort"
 )
 
 var (
@@ -89,6 +90,13 @@ func (s *Store) Cancel(reservationID string) error {
 // A map has no order: range over it, collect into a slice, then sort.
 // Unknown product or no reservations: an empty slice (not nil), never an error.
 func (s *Store) Reservations(productID string) []*Reservation {
-	// TODO: implement
+	out := []*Reservation{}
+
+	for _, r := range s.reservations {
+		if r.ProductID == r.ID{
+			out = append(out, r)
+		}
+		sort.Slice(out, )
+	}
 	return nil
 }
