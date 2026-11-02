@@ -71,11 +71,18 @@ func (s *Store) Reserve(productID string, qty int) (*Reservation, error) {
 }
 
 // Cancel releases a Held reservation and RETURNS its quantity to the product's stock.
-// Only return stock if the cancel transition was legal.
+// Only return stock if thegit@github.com:lperalta14/workshopGo.git cancel transition was legal.
 // ErrReservationNotFound if the reservation doesn't exist.
 func (s *Store) Cancel(reservationID string) error {
-	// TODO: implement
-	return errors.New("TODO: Cancel")
+	c := s.reservations[reservationID]
+	if c == nil {
+		return ErrReservationNotFound
+	}
+	er := c.cancel()
+	if er == nil {
+		s.products[c.ProductID].Stock += c.Quantity
+	}
+	return er
 }
 
 // Reservations returns every reservation of a product, sorted by ID.

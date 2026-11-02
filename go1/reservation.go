@@ -9,7 +9,6 @@ const (
 	Held Status = iota
 	Confirmed
 	Canceled
-	// TODO: one state is missing. The tests know its name.
 )
 
 // String makes a Status print with its name.
