@@ -44,10 +44,10 @@ copiando el patrón de los demás, y haz que pase.
 
 Has terminado el bloque cuando:
 
-- [ ] Compila: `Canceled` está en el `iota` y en `String()`.
-- [ ] `go test -run TestStatus -v` pasa.
-- [ ] `go test -run 'TestConfirm|TestCancel' -v` pasa.
-- [ ] Has escrito el sexto test, cancelar una reserva ya cancelada es ilegal, y pasa.
+- [x] Compila: `Canceled` está en el `iota` y en `String()`.
+- [x] `go test -run TestStatus -v` pasa.
+- [x] `go test -run 'TestConfirm|TestCancel' -v` pasa.
+- [x] Has escrito el sexto test, cancelar una reserva ya cancelada es ilegal, y pasa.
 
 ### Bloque 2 — el almacén (`store.go`)
 
@@ -63,9 +63,9 @@ go test -run 'TestReserv|TestStore' -v
 
 Has terminado el bloque cuando:
 
-- [ ] `go test -run TestReserve_ -v` pasa: los cinco de `Reserve`.
-- [ ] `go test -run TestStore -v` pasa: `Cancel` devuelve el stock, y solo una vez.
-- [ ] `go test -run TestReservations -count=5 -v` pasa las cinco veces.
+- [x] `go test -run TestReserve_ -v` pasa: los cinco de `Reserve`.
+- [x] `go test -run TestStore -v` pasa: `Cancel` devuelve el stock, y solo una vez.
+- [x] `go test -run TestReservations -count=5 -v` pasa las cinco veces.
 
 ### Bloque 3 — la taquilla, de cero (`cmd/taquilla`)
 

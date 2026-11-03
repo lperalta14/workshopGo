@@ -93,10 +93,12 @@ func (s *Store) Reservations(productID string) []*Reservation {
 	out := []*Reservation{}
 
 	for _, r := range s.reservations {
-		if r.ProductID == r.ID{
+		if r.ProductID == productID{
 			out = append(out, r)
 		}
-		sort.Slice(out, )
 	}
-	return nil
+	sort.Slice(out, func(i int, j int) bool {
+		return out[i].ID < out[j].ID
+	})
+	return out
 }
